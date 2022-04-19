@@ -14,8 +14,17 @@ if (navigator.serviceWorker) {
 }
 
 /**
- * This function displays an alert.
+ * Get API info.
  */
-function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+async function getImage() {
+  let response = await fetch('https://api.catboys.com/img')
+  let jsonData = await response.json()
+
+  return jsonData
 }
+getImage().then(
+  function(jsonData) {
+    document.getElementById("api-image").innerHTML = '<img src="' + jsonData.url + '" alt="API image" width="500">'
+    document.getElementById("image-artist").innerHTML = '<p>Artist: ' + '<a href="' + jsonData.artist_url + '">' + jsonData.artist + '</a>'  
+  }
+)
