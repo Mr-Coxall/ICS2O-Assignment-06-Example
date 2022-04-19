@@ -26,15 +26,14 @@ getImage().then(function (jsonData) {
   document.getElementById("api-image").innerHTML =
     '<img src="' + jsonData.url + '" alt="API image" width="500">'
   if (jsonData.artist_url != "none") {
-  document.getElementById("image-artist").innerHTML =
-    "<p>Artist: " +
-    '<a href="' +
-    jsonData.artist_url +
-    '">' +
-    jsonData.artist +
-    "</a>"    
+    document.getElementById("image-artist").innerHTML =
+      "<p>Artist: " +
+      '<a href="' +
+      jsonData.artist_url +
+      '">' +
+      jsonData.artist +
+      "</a>"
   } else {
     document.getElementById("image-artist").innerHTML = "<p>Artist: unknown</p>"
   }
-
 })
