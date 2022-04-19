@@ -17,14 +17,19 @@ if (navigator.serviceWorker) {
  * Get API info.
  */
 async function getImage() {
-  let response = await fetch('https://api.catboys.com/img')
+  let response = await fetch("https://api.catboys.com/img")
   let jsonData = await response.json()
 
   return jsonData
 }
-getImage().then(
-  function(jsonData) {
-    document.getElementById("api-image").innerHTML = '<img src="' + jsonData.url + '" alt="API image" width="500">'
-    document.getElementById("image-artist").innerHTML = '<p>Artist: ' + '<a href="' + jsonData.artist_url + '">' + jsonData.artist + '</a>'  
-  }
-)
+getImage().then(function (jsonData) {
+  document.getElementById("api-image").innerHTML =
+    '<img src="' + jsonData.url + '" alt="API image" width="500">'
+  document.getElementById("image-artist").innerHTML =
+    "<p>Artist: " +
+    '<a href="' +
+    jsonData.artist_url +
+    '">' +
+    jsonData.artist +
+    "</a>"
+})
