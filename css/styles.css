@@ -17,6 +17,13 @@
   opacity: 0.001;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 body {
   background-color: cornflowerblue;
 }
