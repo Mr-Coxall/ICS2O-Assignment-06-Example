@@ -8,8 +8,8 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/github-page-pwa/sw.js", {
-    scope: "/github-page-pwa/",
+  navigator.serviceWorker.register("/ICS2O-Assignment-06-Example/sw.js", {
+    scope: "/ICS2O-Assignment-06-Example/",
   })
 }
 
